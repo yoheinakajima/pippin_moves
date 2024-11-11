@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unicorn Animations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animation Buttons -->
+    <div id="buttons">
+        <button data-animation="wave" title="Wave">👋</button>
+        <button data-animation="jump" title="Jump">🦘</button>
+        <button data-animation="wagTail" title="Wag Tail">🐕</button>
+        <button data-animation="blink" title="Blink">👀</button>
+        <button data-animation="nodHead" title="Nod Head">🤔</button>
+        <button data-animation="wiggleEars" title="Wiggle Ears">🐰</button>
+        <button data-animation="shakeMane" title="Shake Mane">💇‍♀️</button>
+        <button data-animation="shootHorn" title="Shoot Horn">🎆</button>
+        <button data-animation="rainbowBody" title="Rainbow Body">🌈</button>
+        <button data-animation="spin" title="Spin">🌀</button>
+        <button data-animation="twirl" title="Twirl">🤸‍♂️</button>
+    </div>
+
+    <!-- SVG Unicorn -->
+    <div id="unicorn-container">
+        <svg width="100%" height="auto" viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg">
+            <!-- Unicorn Group -->
+            <g id="unicorn">
+                <!-- Legs Group -->
+                <g id="legs">
+                    <!-- Back Legs -->
+                    <path d="M100,160 L100,190" stroke="#000" stroke-width="2"></path>
+                    <path d="M120,160 L120,190" stroke="#000" stroke-width="2"></path>
+                    <path d="M140,160 L140,190" stroke="#000" stroke-width="2"></path>
+
+                    <!-- Front Leg and Hoof Group -->
+                    <g id="front-leg-hoof">
+                        <!-- Front Leg -->
+                        <path id="front-leg" d="M160,120 Q165,140 160,160" stroke="#000" stroke-width="2"></path>
+                        <!-- Hoof -->
+                        <ellipse cx="160" cy="160" rx="5" ry="2" fill="#000"></ellipse>
+                    </g>
+
+                    <!-- Back Hooves -->
+                    <ellipse cx="100" cy="190" rx="5" ry="2" fill="#000"></ellipse>
+                    <ellipse cx="120" cy="190" rx="5" ry="2" fill="#000"></ellipse>
+                    <ellipse cx="140" cy="190" rx="5" ry="2" fill="#000"></ellipse>
+                </g>
+
+                <!-- Body Group -->
+                <g id="body">
+                    <!-- Unicorn Body -->
+                    <path id="body-shape" d="M80,150 Q60,120 80,90 Q100,60 140,70 Q180,80 160,120 Q150,160 100,160 Z" fill="#fff" stroke="#000" stroke-width="2"></path>
+
+                    <!-- Tail Group -->
+                    <g id="tail">
+                        <path d="M80,150 Q70,155 75,160 Q70,165 80,170" stroke="#ff69b4" stroke-width="2" fill="none"></path>
+                        <path d="M75,160 Q80,165 75,170" stroke="#ff69b4" stroke-width="2" fill="none"></path>
+                    </g>
+
+                    <!-- Details on Body -->
+                    <path d="M90,120 Q95,110 100,120" stroke="#000" stroke-width="1" fill="none"></path>
+                    <path d="M110,130 Q115,120 120,130" stroke="#000" stroke-width="1" fill="none"></path>
+                </g>
+
+                <!-- Head and Neck Group -->
+                <g id="head-neck-group">
+                    <!-- Head and Neck -->
+                    <g id="head-neck">
+                        <path id="neck" d="M140,70 Q150,60 160,55 Q170,50 175,60 Q180,70 170,80 Q160,85 150,80 Q140,75 140,70 Z" fill="#fff" stroke="#000" stroke-width="2"></path>
+                    </g>
+
+                    <!-- Horn -->
+                    <polygon id="horn" points="160,55 155,35 165,35" fill="#ffd700" stroke="#000" stroke-width="1"></polygon>
+
+                    <!-- Ears Group -->
+                    <g id="ears">
+                        <path d="M165,45 Q166,40 160,43" fill="#fff" stroke="#000" stroke-width="1"></path>
+                        <path d="M170,45 Q171,40 165,43" fill="#fff" stroke="#000" stroke-width="1"></path>
+                    </g>
+
+                    <!-- Eyes Group -->
+                    <g id="eyes">
+                        <circle id="eye-left" cx="162" cy="60" r="3" fill="#000"></circle>
+                        <circle id="eye-left-pupil" cx="158" cy="60" r="1.5" fill="#fff"></circle>
+                    </g>
+
+                    <!-- Mane -->
+                    <g id="mane">
+                        <path d="M155,55 Q150,60 155,65 Q150,70 155,75 Q150,80 155,85" stroke="#ff69b4" stroke-width="2" fill="none"></path>
+                        <path d="M160,55 Q155,60 160,65 Q155,70 160,75 Q155,80 160,85" stroke="#ff69b4" stroke-width="2" fill="none"></path>
+                    </g>
+                </g>
+            </g>
+        </svg>
+
+        <!-- Speech Bubble (Initially Hidden) -->
+        <!-- The speech bubble will be dynamically created via JavaScript -->
+    </div>
+
+    <!-- Background Change Buttons -->
+    <div id="background-buttons">
+        <button data-bg="moving-stripes" title="Moving Stripes">🏁</button>
+        <button data-bg="flashy" title="Super Flashy">🎆</button>
+        <button data-bg="waves" title="Waves">🌊</button>
+        <button data-bg="sparkles" title="Sparkles">✨</button>
+        <button data-bg="grass" title="Grass">🌿</button>
+    </div>
+
+    <!-- Input Form for Speech Bubble -->
+    <div id="speech-form">
+        <input type="text" id="speech-input" placeholder="Say something..." />
+        <div class="form-buttons">
+            <button id="submit-button">Submit</button>
+            <button id="remove-button" class="hidden">Remove</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
