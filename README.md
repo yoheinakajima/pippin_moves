@@ -1,6 +1,6 @@
 # Pippin Moves
 
-![Pippin the Unicorn](https://x.com/pippinlovesyou)
+[Pippin the Unicorn](https://x.com/pippinlovesyou)
 
 Welcome to **Pippin Moves**, a playful tool designed to experiment with animating Pippin the Unicorn's SVG. This project serves as a template/inspiration for developers who want to create new animations or tools for Pippin, fostering creativity within the $pippin community.
 
