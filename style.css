@@ -1,0 +1,402 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #f0f8ff; /* Default background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background 1s ease;
+}
+
+/* Container Styles */
+#unicorn-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin: auto;
+}
+
+/* Animation Buttons */
+#buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Background Buttons */
+#background-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+    gap: 10px;
+}
+
+/* Button Styles */
+#buttons button, #background-buttons button {
+    background-color: #ff69b4;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#buttons button:active,
+#buttons button:hover,
+#background-buttons button:hover {
+    background-color: #ff1493;
+}
+
+/* Speech Bubble Styles */
+.speech-bubble {
+    position: absolute;
+    top: 180px; /* Adjusted to be lower */
+    left: 320px; /* Moved further to the right */
+    width: 180px;
+    padding: 10px;
+    background: #ffffff; /* White background */
+    border-radius: 15px; /* More rounded */
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 16px;
+}
+
+/* Tail of the Speech Bubble */
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    top: 20px; /* Adjusted position for the tail */
+    left: -10px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #ffffff; /* Match background */
+}
+
+/* Input Form Styles */
+#speech-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#speech-form input {
+    padding: 10px;
+    border: 2px solid #ff69b4;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    width: 250px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#speech-form input:focus {
+    border-color: #ff1493;
+}
+
+.form-buttons {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+#speech-form button {
+    padding: 10px 20px;
+    background-color: #ff69b4;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    transition: background-color 0.3s;
+}
+
+#speech-form button:hover {
+    background-color: #ff1493;
+}
+
+/* Remove Button Specific Styles */
+#remove-button {
+    background-color: #ff6347;
+}
+
+#remove-button:hover {
+    background-color: #ff4500;
+}
+
+/* Hidden Class for Remove Button */
+.hidden {
+    display: none;
+}
+
+/* Responsive Buttons */
+@media (max-width: 600px) {
+    #buttons button, #background-buttons button {
+        flex: 1 1 45%;
+        max-width: none;
+    }
+
+    .speech-bubble {
+        left: 250px; /* Adjust for smaller screens */
+        width: 150px;
+    }
+
+    #speech-form input {
+        width: 200px;
+    }
+}
+
+/* Animation Styles */
+.bounce-animation {
+    animation: bounce 0.8s infinite;
+    transform-origin: bottom center;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(15px); }
+}
+
+.wave-animation {
+    animation: wave 0.5s forwards;
+    transform-origin: 160px 120px;
+}
+
+@keyframes wave {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-30deg); }
+}
+
+.jump-animation {
+    animation: jump 1s forwards;
+    transform-origin: bottom center;
+}
+
+@keyframes jump {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-50px); }
+    100% { transform: translateY(0); }
+}
+
+.wag-tail-animation {
+    animation: wag-tail 1s forwards;
+    transform-origin: 80px 150px;
+}
+
+@keyframes wag-tail {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(20deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-20deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.blink-animation {
+    animation: blink 0.3s forwards;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.nod-head-animation {
+    animation: nod-head 0.6s forwards;
+    transform-origin: 150px 70px;
+}
+
+@keyframes nod-head {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(15deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.wiggle-ears-animation {
+    animation: wiggle-ears 1s forwards;
+}
+
+@keyframes wiggle-ears {
+    0% { transform: rotate(0deg); }
+    20% { transform: rotate(30deg); }
+    40% { transform: rotate(-30deg); }
+    60% { transform: rotate(30deg); }
+    80% { transform: rotate(-30deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.shake-mane-animation {
+    animation: shake-mane 0.8s forwards;
+    transform-origin: 150px 70px;
+}
+
+@keyframes shake-mane {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(10deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.shoot-horn-animation {
+    animation: shoot-horn 1s forwards;
+    transform-origin: 160px 55px;
+}
+
+@keyframes shoot-horn {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-50px); }
+    100% { transform: translateY(0); }
+}
+
+.rainbow-body-animation {
+    animation: rainbow-body 2s forwards;
+}
+
+@keyframes rainbow-body {
+    0% { fill: #fff; }
+    16% { fill: red; }
+    32% { fill: orange; }
+    48% { fill: yellow; }
+    64% { fill: green; }
+    80% { fill: blue; }
+    100% { fill: violet; }
+}
+
+.spin-animation {
+    animation: spin 2s linear forwards;
+    transform-origin: center center;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.twirl-animation {
+    animation: twirl 1s forwards;
+    transform-origin: center center;
+}
+
+@keyframes twirl {
+    0% { transform: scaleX(1); }
+    25% { transform: scaleX(-1); }
+    50% { transform: scaleX(1); }
+    75% { transform: scaleX(-1); }
+    100% { transform: scaleX(1); }
+}
+
+/* Background Styles */
+
+/* Moving Stripes: Animated diagonal stripes */
+body.bg-moving-stripes {
+    background: repeating-linear-gradient(
+        45deg,
+        #ff69b4,
+        #ff69b4 10px,
+        #ff1493 10px,
+        #ff1493 20px
+    );
+    background-size: 200% 200%;
+    animation: moveStripes 5s linear infinite;
+}
+
+@keyframes moveStripes {
+    from { background-position: 0 0; }
+    to { background-position: 200% 200%; }
+}
+
+/* Super Flashy: Linear gradient rotating properly */
+body.bg-flashy::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet, red);
+    background-size: 400% 400%;
+    animation: moveStripes 10s linear infinite;
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes rotateFlashy {
+    0% { background-position: 0% 50%; transform: rotate(0deg); }
+    100% { background-position: 100% 50%; transform: rotate(360deg); }
+}
+
+/* Waves: Animated wave patterns */
+body.bg-waves {
+    background: linear-gradient(to right, #1e90ff, #104e8b, #1e90ff); /* Darker blues for better visibility */
+    background-size: 400% 400%;
+    animation: waveMove 10s linear infinite;
+}
+
+@keyframes waveMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Sparkles: Animated sparkling dots with dark grey background */
+body.bg-sparkles {
+    background-color: #333; /* Dark grey background */
+}
+
+body.bg-sparkles::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle, rgba(255,255,255,1) 2px, transparent 2px),
+        radial-gradient(circle, rgba(255,255,255,1) 2px, transparent 2px),
+        radial-gradient(circle, rgba(255,255,255,1) 2px, transparent 2px),
+        radial-gradient(circle, rgba(255,255,255,1) 2px, transparent 2px),
+        radial-gradient(circle, rgba(255,255,255,1) 2px, transparent 2px),
+        radial-gradient(circle, rgba(255,255,255,1) 2px, transparent 2px),
+        radial-gradient(circle, rgba(255,255,255,1) 2px, transparent 2px),
+        radial-gradient(circle, rgba(255,255,255,1) 2px, transparent 2px),
+        radial-gradient(circle, rgba(255,255,255,1) 2px, transparent 2px),
+        radial-gradient(circle, rgba(255,255,255,1) 2px, transparent 2px);
+    background-repeat: no-repeat;
+    background-position: 
+        10% 20%, 
+        30% 40%, 
+        50% 60%, 
+        70% 80%, 
+        20% 50%, 
+        80% 30%,
+        40% 70%,
+        60% 10%,
+        85% 35%,
+        25% 75%;
+    background-size: 2px 2px;
+    animation: sparkleFade 3s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes sparkleFade {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+/* Grass: Light green background with dark green specs/little vertical random lines */
+body.bg-grass {
+    background: #006400; /* Light green background */
+    position: relative;
+}
