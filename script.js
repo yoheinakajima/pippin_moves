@@ -75,6 +75,15 @@ document.addEventListener('DOMContentLoaded', function() {
         const inputText = document.getElementById('speech-input').value;
         if (!inputText.trim()) return;
 
+        // Check for the special phrase
+        if (inputText.toLowerCase().trim() === "you are cute") {
+            // Trigger rainbow animation
+            animations.rainbowBody().then(function() {
+                // After rainbow animation completes, continue with normal bounce
+                unicorn.classList.add('bounce-animation');
+            });
+        }
+
         if (speechBubble) {
             // Update existing speech bubble
             const bubbleText = speechBubble.querySelector('.bubble-text');
